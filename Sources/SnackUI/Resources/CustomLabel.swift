@@ -1,8 +1,10 @@
-//
-//  File.swift
-//  SnackUI
-//
-//  Created by Pwever on 14/12/2024.
-//
+import SwiftUI
 
-import Foundation
+struct CustomLabel: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            configuration.title
+            configuration.icon
+        }
+    }
+}

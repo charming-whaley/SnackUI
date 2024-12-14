@@ -10,6 +10,22 @@ struct SnackLabeledButton: View {
     
     var action: () -> ()
     
+    init(
+        label: String,
+        color: Color,
+        systemImage: String,
+        size: ButtonSize,
+        radius: CGFloat,
+        action: @escaping () -> Void
+    ) {
+        self.label = label
+        self.color = color
+        self.systemImage = systemImage
+        self.size = size
+        self.radius = radius
+        self.action = action
+    }
+    
     var body: some View {
         Button {
             action()

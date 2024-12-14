@@ -1,20 +1,14 @@
 import SwiftUI
 
-struct SnackFAQAction: View {
+struct SnackShareButton: View {
     
     @Environment(\.colorScheme) private var colorScheme
     
-    let action: () -> ()
-    
-    init(action: @escaping () -> Void) {
-        self.action = action
-    }
+    let link: URL
     
     var body: some View {
-        Button {
-            action()
-        } label: {
-            Image(systemName: "questionmark")
+        ShareLink(item: link) {
+            Image(systemName: "square.and.arrow.up.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 16.0, height: 16.0)

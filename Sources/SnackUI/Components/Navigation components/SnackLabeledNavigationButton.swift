@@ -1,15 +1,23 @@
 import SwiftUI
 
-struct SnackLabeledGoButton<Content>: View where Content: View {
+struct SnackLabeledNavigationButton<Content>: View where Content: View {
     
     @Environment(\.colorScheme) private var colorScheme
     
+    let label: String
     let direction: GoButtonDirection
-    
+    let size: ButtonSize
     let content: () -> Content
     
-    init(direction: GoButtonDirection, @ViewBuilder content: @escaping () -> Content) {
+    init(
+        label: String,
+        direction: GoButtonDirection,
+        size: ButtonSize,
+        @ViewBuilder content: @escaping () -> Content
+    ) {
+        self.label = label
         self.direction = direction
+        self.size = size
         self.content = content
     }
     
@@ -17,29 +25,20 @@ struct SnackLabeledGoButton<Content>: View where Content: View {
         NavigationLink {
             content()
         } label: {
-            Image(systemName: direction == .left ? "arrow.left" : "arrow.right")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 16.0, height: 16.0)
+            Label(label, systemImage: direction == .left ? "arrow.left" : "arrow.right")
+                .font(.headline)
+                .foregroundStyle(Color.black.opacity(0.2))
+                .computeButtonSize(size)
                 .background {
                     RoundedRectangle(cornerRadius: 10.0)
                         .fill(colorScheme == .dark ? Color.black : Color.white)
-                        .frame(width: 40.0, height: 40.0)
                         .overlay {
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(Color.black.opacity(0.2), lineWidth: 1.3)
                         }
                 }
-                .foregroundStyle(Color.black.opacity(0.2))
+                .labelStyle(CustomLabel())
         }
     }
     
-}
-
-#Preview {
-    NavigationStack {
-        SnackLabeledGoButton(direction: .left) {
-            Text("Hello, world!")
-        }
-    }
 }

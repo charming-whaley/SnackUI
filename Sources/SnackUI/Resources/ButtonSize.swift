@@ -1,6 +1,5 @@
 @frozen
 public enum ButtonSize {
-    
     case little
     case small
     case regular
@@ -9,6 +8,5 @@ public enum ButtonSize {
     case extraLarge
     case wide
     case extraWide
-    case ultraWide
-    
+    case ultraWide    
 }
