@@ -1,13 +1,20 @@
-## SnackUI: an open-source UI library for SwiftUI
-SnackUI is an open-source library made on SwiftUI to help developers with designing their apps! It provides a vig variety of ui components such as buttons, labels, texts, etc.
+## UI components framework for SwiftUI
+
+SnackUI allows developers to build beautiful iOS-apps faster. SnackUI is responsively designed allowing your iOS-app to scale on multiple devices
 
 ## Installation guide
 
-Firstly, you need to install SnackUI via Swift package manager
+To use SnackUI components, all you need to do is install SnackUI via the Swift Package Manager:
+
+```
+https://github.com/charming-whaley/SnackUI.git
+```
+
+Voilà! Now you are ready to improve UI in your project!
 
 ## Usage
 
-After you've installed it, you just need to add a component to your view, and voilà, you're ready to use SnackUI in your project 
+After the installation, add any SnackUI component to your project:
 
 ```swift
 struct ContentView: View {
