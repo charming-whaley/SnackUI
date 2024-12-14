@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct SnackFAQAction: View {
+struct SnackShareButton: View {
     
     @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
-        Image(systemName: "questionmark")
+        Image(systemName: "square.and.arrow.up.fill")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 16.0, height: 16.0)
@@ -21,4 +21,8 @@ struct SnackFAQAction: View {
             .foregroundStyle(Color.black.opacity(0.2))
     }
     
+}
+
+#Preview {
+    SnackShareButton()
 }
