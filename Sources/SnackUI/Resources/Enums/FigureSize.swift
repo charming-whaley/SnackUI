@@ -1,4 +1,5 @@
-enum FigureSize {
+@frozen
+public enum FigureSize {
     case little
     case small
     case regular
