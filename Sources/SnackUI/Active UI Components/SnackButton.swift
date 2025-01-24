@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SnackButton: View {
+public struct SnackButton: View {
     let title: String
     let color: Color
     let size: ButtonSize
@@ -23,6 +23,25 @@ struct SnackButton: View {
         self.asynchronousCompletion = nil
     }
     
+    public var body: some View {
+        Button {
+            if let asynchronousCompletion = asynchronousCompletion {
+                Task { @MainActor in
+                    await asynchronousCompletion()
+                }
+            } else {
+                completion()
+            }
+        } label: {
+            Text(title)
+                .foregroundStyle(.white)
+                .background(color, in: .rect(cornerRadius: cornerRadius))
+                .setButtonSize(size)
+        }
+    }
+}
+
+extension SnackButton {
     init(
         title: String,
         color: Color,
@@ -36,19 +55,5 @@ struct SnackButton: View {
         self.cornerRadius = cornerRadius
         self.completion = {  }
         self.asynchronousCompletion = asynchronousCompletion
-    }
-    
-    var body: some View {
-        Button {
-            if let asynchronousCompletion = asynchronousCompletion {
-                Task { @MainActor in
-                    await asynchronousCompletion()
-                }
-            } else {
-                completion()
-            }
-        } label: {
-            
-        }
     }
 }
