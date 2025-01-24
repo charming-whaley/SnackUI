@@ -19,8 +19,7 @@ public enum SnackColor {
     case coral
     case navy
     
-    
-    var color: Color {
+    var value: Color {
         switch self {
         case .red:
             Color(hex: "#D84040") ?? .black

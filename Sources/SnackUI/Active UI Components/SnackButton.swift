@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct SnackButton: View {
     let title: String
-    let color: Color
+    let color: SnackColor
     let size: ButtonSize
     let cornerRadius: CGFloat
     let completion: () -> Void
@@ -10,7 +10,7 @@ public struct SnackButton: View {
     
     init(
         title: String,
-        color: Color,
+        color: SnackColor,
         size: ButtonSize,
         cornerRadius: CGFloat = 0,
         completion: @escaping () -> Void
@@ -35,7 +35,7 @@ public struct SnackButton: View {
         } label: {
             Text(title)
                 .foregroundStyle(.white)
-                .background(color, in: .rect(cornerRadius: cornerRadius))
+                .background(color.value, in: .rect(cornerRadius: cornerRadius))
                 .setButtonSize(size)
         }
     }
@@ -44,7 +44,7 @@ public struct SnackButton: View {
 extension SnackButton {
     init(
         title: String,
-        color: Color,
+        color: SnackColor,
         size: ButtonSize,
         cornerRadius: CGFloat = 0,
         asynchronousCompletion: @escaping () async -> Void
