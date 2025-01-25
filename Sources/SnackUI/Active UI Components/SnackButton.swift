@@ -1,5 +1,12 @@
 import SwiftUI
 
+/// One of the most important components in SnackUI. SnackButton is more customizable than SnackModernButton
+/// - title: text inside SnackButton
+/// - tintColor: background color of SnackButton
+/// - radius: how elliptic SnackButton is
+/// - size: you can specify size of SnackButton with this property
+/// - action: what SnackButton does
+/// - asyncAction: what SnackButton does but in an asynchronous way
 public struct SnackButton : View {
     var title: String
     var tintColor: SnackColor

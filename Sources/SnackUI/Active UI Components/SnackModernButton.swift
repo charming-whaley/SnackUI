@@ -1,5 +1,11 @@
 import SwiftUI
 
+/// This button is alike to SnackButton but you are not allowed to specify corner radius of SnackModernButton
+/// - title: text inside SnackButton
+/// - tintColor: background color of SnackButton
+/// - size: you can specify size of SnackButton with this property
+/// - action: what SnackButton does
+/// - asyncAction: what SnackButton does but in an asynchronous way
 public struct SnackModernButton : View {
     var title: String
     var tintColor: SnackColor

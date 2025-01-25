@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// SnackFailure creates mini UI component with your message in case when something went wrong
 public struct SnackFailure : View {
     let title: String
     
@@ -29,8 +30,4 @@ public struct SnackFailure : View {
                 .shadow(color: Color(SnackColor.red.value), radius: 3)
         }
     }
-}
-
-#Preview {
-    SnackFailure("You are not allowed to do this now!")
 }

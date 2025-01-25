@@ -1,5 +1,11 @@
 import SwiftUI
 
+/// Designed in a modern way, SnackNavigationButton provides functionality to go through views in your app. NavigationStack view is obligatory
+/// - title: text inside SnackButton
+/// - tintColor: background color of SnackButton
+/// - size: you can specify size of SnackButton with this property
+/// - action: what SnackButton does
+/// - asyncAction: what SnackButton does but in an asynchronous way
 public struct SnackNavigationButton<Content> : View where Content : View {
     var title: String
     var tintColor: SnackColor

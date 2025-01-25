@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Creates subtitle for a title
 public struct SnackSubtitle : View {
     let content: String
     
