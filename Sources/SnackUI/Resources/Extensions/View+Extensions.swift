@@ -12,4 +12,20 @@ extension View {
         self
             .frame(maxHeight: .infinity, alignment: alignment)
     }
+    
+    @ViewBuilder
+    public func computeButtonSize(_ size: ButtonSize, _ color: SnackColor) -> some View {
+        switch size {
+        case .small:
+            self
+        case .regular:
+            self
+        case .middle:
+            self
+        case .large:
+            self
+        case .wide:
+            self
+        }
+    }
 }
