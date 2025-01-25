@@ -1,6 +1,5 @@
 @frozen
 public enum FigureSize {
-    case little
     case small
     case regular
     case middle
