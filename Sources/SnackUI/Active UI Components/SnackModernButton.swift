@@ -1,9 +1,8 @@
 import SwiftUI
 
-public struct SnackButton : View {
+public struct SnackModernButton : View {
     var title: String
     var tintColor: SnackColor
-    var radius: CGFloat
     var size: ButtonSize
     var action: () -> Void
     var asyncAction: (() async -> Void)?
@@ -11,13 +10,11 @@ public struct SnackButton : View {
     init(
         title: String = "Button",
         tintColor: SnackColor = .purple,
-        radius: CGFloat = .zero,
         size: ButtonSize = .wide,
         action: @escaping () -> Void
     ) {
         self.title = title
         self.tintColor = tintColor
-        self.radius = radius
         self.size = size
         self.action = action
         self.asyncAction = nil
@@ -36,24 +33,22 @@ public struct SnackButton : View {
             Text(title)
                 .foregroundStyle(Color(SnackColor.white.value))
                 .font(.headline)
-                .computeButtonSize(size, tintColor)
-                .clipShape(.rect(cornerRadius: radius))
+                .computeButtonSize(.wide, tintColor)
+                .clipShape(.capsule)
                 .padding(.horizontal)
         }
     }
 }
 
-extension SnackButton {
+extension SnackModernButton {
     init(
         title: String = "Button",
         tintColor: SnackColor = .purple,
-        radius: CGFloat = .zero,
         size: ButtonSize = .wide,
         asyncAction: @escaping () async -> Void
     ) {
         self.title = title
         self.tintColor = tintColor
-        self.radius = radius
         self.size = size
         self.action = {  }
         self.asyncAction = asyncAction

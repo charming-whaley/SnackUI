@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct SnackCircle<Content>: View where Content: View {
+public struct SnackCircle<Content> : View where Content : View {
     var color: SnackColor
     var content: Content
     

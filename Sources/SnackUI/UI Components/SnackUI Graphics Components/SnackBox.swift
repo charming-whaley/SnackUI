@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct SnackBox<Content>: View where Content : View {
+public struct SnackBox<Content> : View where Content : View {
     var color: SnackColor
     var cornerRadius: CGFloat
     var content: Content

@@ -26,6 +26,10 @@ extension View {
             self
         case .wide:
             self
+                .frame(maxWidth: .infinity)
+                .background(Color(color.value))
+                .padding(.vertical, 20)
+                .background(Color(color.value))
         }
     }
 }

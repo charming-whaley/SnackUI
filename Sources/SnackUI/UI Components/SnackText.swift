@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct SnackText: View {
+public struct SnackText : View {
     var content: String
     
     init(content: String = "Hello, SnackUI!") {
