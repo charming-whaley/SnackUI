@@ -9,10 +9,10 @@ public struct SnackButton : View {
     var asyncAction: (() async -> Void)?
     
     init(
-        title: String = "Button",
-        tintColor: SnackColor = .purple,
-        radius: CGFloat = .zero,
-        size: ButtonSize = .wide,
+        _ title: String = "Button",
+        _ tintColor: SnackColor = .purple,
+        _ radius: CGFloat = .zero,
+        _ size: ButtonSize = .wide,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -45,11 +45,11 @@ public struct SnackButton : View {
 
 extension SnackButton {
     init(
-        title: String = "Button",
-        tintColor: SnackColor = .purple,
-        radius: CGFloat = .zero,
-        size: ButtonSize = .wide,
-        asyncAction: @escaping () async -> Void
+        _ title: String = "Button",
+        _ tintColor: SnackColor = .purple,
+        _ radius: CGFloat = .zero,
+        _ size: ButtonSize = .wide,
+        _ asyncAction: @escaping () async -> Void
     ) {
         self.title = title
         self.tintColor = tintColor
