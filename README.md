@@ -19,9 +19,16 @@ import SnackUI
 
 struct ContentView: View {
     var body: some View {
-        SnackButton("Tap on me!", .blue, 15, .wide) {
-            await greetUser(withMessage: "Welcome to SnackUI!")
+        SnackButton(withTitle: "Tap on me!", ofColor: .blue, AndSize: .large, withRadiusOf: 20) {
+            Task {
+                await greet()
+            }
         }
+    }
+    
+    @MainActor
+    private func greet() async {
+        print("Hi!")
     }
 }
 ```
