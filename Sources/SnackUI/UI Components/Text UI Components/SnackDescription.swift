@@ -1,6 +1,5 @@
 import SwiftUI
 
-/// Creates description text
 public struct SnackDescription : View {
     let content: String
     

@@ -1,6 +1,5 @@
 import SwiftUI
 
-/// Creates a title for a view
 public struct SnackTitle : View {
     let content: String
     

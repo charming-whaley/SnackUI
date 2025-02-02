@@ -1,6 +1,5 @@
 import SwiftUI
 
-/// Renders a rectangle with specified color and corner radius. You can add any view on SnackBox
 public struct SnackBox<Content> : View where Content : View {
     var color: SnackColor
     var cornerRadius: CGFloat

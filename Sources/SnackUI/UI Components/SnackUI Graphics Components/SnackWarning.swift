@@ -1,6 +1,5 @@
 import SwiftUI
 
-/// SnackWarning creates mini UI component with your message in case when something may cause an error, or user must pay attention to something
 public struct SnackWarning : View {
     let title: String
     

@@ -2,34 +2,36 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    public func horizontalAlignment(_ alignment: Alignment) -> some View {
+    public func addHorizontalAlignment(_ alignment: Alignment) -> some View {
         self
             .frame(maxWidth: .infinity, alignment: alignment)
     }
     
     @ViewBuilder
-    public func verticalAlignment(_ alignment: Alignment) -> some View {
+    public func addVerticalAlignment(_ alignment: Alignment) -> some View {
         self
             .frame(maxHeight: .infinity, alignment: alignment)
     }
     
     @ViewBuilder
-    public func computeButtonSize(_ size: ButtonSize, _ color: SnackColor) -> some View {
+    public func adjustButtonSize(_ size: ButtonSize) -> some View {
         switch size {
         case .small:
             self
-        case .regular:
-            self
+                .padding(.vertical, 12)
+                .frame(width: UIScreen.main.bounds.width / 4)
         case .middle:
             self
+                .padding(.vertical, 12)
+                .frame(width: UIScreen.main.bounds.width / 2)
         case .large:
             self
+                .padding(.vertical, 12)
+                .frame(width: UIScreen.main.bounds.width - 50)
         case .wide:
             self
+                .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)
-                .background(Color(color.value))
-                .padding(.vertical, 20)
-                .background(Color(color.value))
         }
     }
 }

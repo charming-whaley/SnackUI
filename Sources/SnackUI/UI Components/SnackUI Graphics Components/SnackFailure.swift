@@ -1,6 +1,5 @@
 import SwiftUI
 
-/// SnackFailure creates mini UI component with your message in case when something went wrong
 public struct SnackFailure : View {
     let title: String
     
